@@ -14,7 +14,10 @@
 
   <link rel="icon" href="./public/images/logo-icon.png" />
   <link rel="stylesheet" href="./public/style/main.css" />
+  <link rel="stylesheet" href="./public/style/map.css" />
+  <link rel="stylesheet" href="./public/style/sidebar.css" />
   <link rel="stylesheet" href="./public/style/page-orphanage.css" />
+  <link rel="stylesheet" href="./public/style/buttons.css" />
   <link rel="stylesheet" href="./public/style/animations.css" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,800&display=swap" rel="stylesheet">
 
@@ -25,7 +28,9 @@
 <body>
   <div id="page-orphanage">
     <aside class="animate-right sidebar">
-      <img src="./public/images/map-marker.svg" alt="Happy">
+      <a href="index.html">
+        <img src="./public/images/map-marker.svg" alt="Happy">
+      </a>
       <footer>
         <button onclick="history.back()" class="arrow-back">
           <img src="./public/images/arrow-back.svg" alt="Voltar">
@@ -41,28 +46,28 @@
 
         <div class="images">
           <button onClick="selectImage(event)" class="active" type="button">
-            <img src="https://source.unsplash.com/random?id=1" alt="Recanto da Esperança">
+            <img src="https://source.unsplash.com/featured/?child,baby" alt="Recanto da Esperança">
           </button>
 
           <button onClick="selectImage(event)" type="button">
-            <img src="https://source.unsplash.com/random?id=2" alt="Recanto da Esperança">
+            <img src="https://source.unsplash.com/featured/?child" alt="Recanto da Esperança">
           </button>
 
           <button onClick="selectImage(event)" type="button">
-            <img src="https://source.unsplash.com/random?id=3" alt="Recanto da Esperança">
+            <img src="https://source.unsplash.com/featured/?children" alt="Recanto da Esperança">
           </button>
 
           <button onClick="selectImage(event)" type="button">
-            <img src="https://source.unsplash.com/random?id=4" alt="Recanto da Esperança">
+            <img src="https://source.unsplash.com/featured/?kids" alt="Recanto da Esperança">
           </button>
 
 
           <button onClick="selectImage(event)" type="button">
-            <img src="https://source.unsplash.com/random?id=5" alt="Recanto da Esperança">
+            <img src="https://source.unsplash.com/featured/?children,boy" alt="Recanto da Esperança">
           </button>
 
           <button onClick="selectImage(event)" type="button">
-            <img src="https://source.unsplash.com/random?id=6" alt="Recanto da Esperança">
+            <img src="https://source.unsplash.com/featured/?children,girl" alt="Recanto da Esperança">
           </button>
 
 
@@ -97,13 +102,13 @@
               Atendemos aos finais de semana
             </div>
           </div>
+          <a href=" https://api.whatsapp.com/send?phone=5555991442242" target="_blank">
+            <button class="primary-button" type="button">
+              <img src="./public/images/whatsapp.svg" alt="Whatsapp ícone">
+              Entrar em contato
+            </button>
 
-          <button class="primary-button" type="button">
-            <img src="./public/images/whatsapp.svg" alt="Whatsapp ícone">
-            Entrar em contato
-          </button>
-
-
+          </a>
 
         </div>
 
