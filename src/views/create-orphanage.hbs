@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastrar orfanato | Happy</title>
+
+  <!-- mapa interativo-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+
+  <link rel="icon" href="/images/logo-icon.png" />
+  <link rel="stylesheet" href="/style/main.css" />
+  <link rel="stylesheet" href="/style/map.css" />
+  <link rel="stylesheet" href="/style/sidebar.css" />
+  <link rel="stylesheet" href="/style/page-create-orphanage.css" />
+  <link rel="stylesheet" href="/style/form.css" />
+  <link rel="stylesheet" href="/style/buttons.css" />
+  <link rel="stylesheet" href="/style/animations.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,800&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+  <div id="page-create-orphanage">
+    <aside class="animate-right sidebar">
+      <a href="/">
+        <img src="/images/map-marker.svg" alt="Happy">
+      </a>
+      <footer>
+        <button onclick="history.back()" class="arrow-back">
+          <img src="/images/arrow-back.svg" alt="Voltar">
+        </button>
+      </footer>
+    </aside>
+
+    <main class="animate-appear with-sidebar">
+
+      <form action="">
+        <fieldset>
+          <legend>Informações sobre o local</legend>
+          <div class="map-container">
+            <div id="mapid"></div>
+            <input type="hidden" name="lat">
+            <input type="hidden" name="lng">
+
+            <footer>
+
+              Clique no mapa para adicionar a localização
+
+            </footer>
+          </div>
+
+
+          <div class="input-block">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="input-block">
+            <label for="about">Sobre <span>Máximo 300 caracteres</span></label>
+            <textarea id="about" name="about" required></textarea>
+          </div>
+
+          <div class="input-block">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+
+          <div class="input-block">
+            <label for="whatsapp">Número de Whatsapp</label>
+            <input type="text" id="whatsapp" name="whatsapp" required>
+          </div>
+
+          <div class="input-block images">
+            <label for="images">Fotos
+              <span>Certifique-se de que a foto esteja em um endereço online e público</span>
+            </label>
+            <div class="images-upload" id="images">
+
+              <div class="new-upload">
+                <input name="images" placeholder="Cole o link da foto aqui" required type="text">
+                <span onclick="deleteField(event)">
+                  <img src="/images/remove-file.svg" alt="Remover foto">
+                </span>
+              </div>
+
+            </div>
+
+            <button type="button" onclick="addPhotoField()">
+              <img src="/images/add-file.svg" alt="Adicionar nova foto">
+            </button>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Informações sobre visitas</legend>
+
+          <div class="input-block">
+            <label for="instructions">Instruções</label>
+            <textarea id="instructions" name="instructions" required></textarea>
+          </div>
+
+          <div class="input-block">
+            <label for="opening_hours">Horário de visitas</label>
+            <input type="text" id="opening_hours" name="opening_hours" required placeholder="Início">
+            <br><br>
+            <input type="text" id="opening_hours" name="opening_hours" required placeholder="Final">
+          </div>
+
+          <div class="input-block">
+            <label for="open_on_weekends">Aceita visita nos finais de semana?</label>
+            <input type="hidden" id="open_on_weekends" name="open_on_weekends" value="1" required />
+
+            <div class="button-select">
+              <button data-value="1" type="button" onclick="toggleSelect(event)" class="active">Sim</button>
+              <button data-value="0" type="button" onclick="toggleSelect(event)">Não</button>
+            </div>
+
+            <button type="submit" class="primary-button">
+              Confirmar
+            </button>
+
+          </div>
+
+        </fieldset>
+      </form>
+
+    </main>
+  </div>
+  <script src="/scripts/create-orphanage.js"></script>
+</body>
+
+</html>

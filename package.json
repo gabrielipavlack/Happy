@@ -1,0 +1,25 @@
+{
+  "name": "happy",
+  "version": "1.0.0",
+  "description": "O Happy é uma plataforma para localização de orfanatos e agendamento de visitas. O Happy foi pensado em homenagem ao Dia das Crianças, com o intuito de trazer mais amor e carinho para crianças que vivem em orfanatos. O projeto foi desenvolvido durante a Next Level Week 3, organizada pela Rocketset.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielipavlack/Happy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielipavlack/Happy/issues"
+  },
+  "homepage": "https://github.com/gabrielipavlack/Happy#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "nodemon": "^2.0.5"
+  }
+}
