@@ -98,6 +98,6 @@ main h1 {
   .visit p {
     line-height: 1.5;
     width: clamp(20rem, 20vw, 30rem);
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 }

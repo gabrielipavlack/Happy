@@ -11,8 +11,8 @@ function execute(db){
     whatsapp TEXT,
     images TEXT,
     email TEXT,
-    hour_open TEXT,
-    hour_close TEXT,
+    opening_hours TEXT,
+    closing_hours TEXT,
     open_on_weekends TEXT,
     instructions TEXT
     

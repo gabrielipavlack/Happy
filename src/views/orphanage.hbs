@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recanto da Esperança | Happy</title>
+  <title>{{ orphanage.name }} | Happy</title>
 
   <!-- mapa interativo-->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
@@ -36,75 +36,64 @@
     </aside>
 
     <main class="animate-appear with-sidebar">
-
       <div class="orphanage-details">
-        <img src="/images/home.jpg" alt="Recanto da Esperança">
-
+        <img src="{{orphanage.firstImage}}" alt="{{orphanage.name}}">
 
         <div class="images">
+          {{#each orphanage.images}}
           <button onClick="selectImage(event)" class="active" type="button">
-            <img src="https://source.unsplash.com/featured/?child,baby" alt="Recanto da Esperança">
+            <img src="{{this}}" alt="{{orphanage.name}}">
           </button>
-
-          <button onClick="selectImage(event)" type="button">
-            <img src="https://source.unsplash.com/featured/?child" alt="Recanto da Esperança">
-          </button>
-
-          <button onClick="selectImage(event)" type="button">
-            <img src="https://source.unsplash.com/featured/?children" alt="Recanto da Esperança">
-          </button>
-
-          <button onClick="selectImage(event)" type="button">
-            <img src="https://source.unsplash.com/featured/?kids" alt="Recanto da Esperança">
-          </button>
-
-
-          <button onClick="selectImage(event)" type="button">
-            <img src="https://source.unsplash.com/featured/?children,boy" alt="Recanto da Esperança">
-          </button>
-
-          <button onClick="selectImage(event)" type="button">
-            <img src="https://source.unsplash.com/featured/?children,girl" alt="Recanto da Esperança">
-          </button>
-
-
+          {{/each}}
         </div>
 
         <div class="orphanage-details-content">
-          <h1>Recanto da Esperança</h1>
-          <p>Presta assistência a crianças de 06 a 15 anos que se encontram em situação de risco e/ou vulnerabilidade social.</p>
+          <h1>{{orphanage.name}}</h1>
+          <p>{{orphanage.about}}</p>
 
           <div class="map-container">
             <div id="mapid"></div>
+            <span data-lat="{{orphanage.lat}}" data-lng="{{orphanage.lng}}">
+            </span>
 
             <footer>
-              <a href="">Ver rotas no Google Maps</a>
+              <a href="https://maps.google.com/mobile?q={{orphanage.lat}},{{orphanage.lng}}&z=15" target="_blank">Ver rotas no Google Maps</a>
             </footer>
           </div>
           <hr />
 
           <h2>Instruções para Visita </h2>
 
-          <p>Venha como se sentir à vontade e traga muito amor!</p>
+          <p>{{orphanage.instructions}}
+
+          </p>
 
           <div class="open-details">
             <div class="hour">
               <img src="/images/clock.svg" alt="Horários">
               Horário de visitas: <br>
+
               Segunda-feira a Sábado <br>
-              das 8h às 18h
+              das {{orphanage.opening_hours}} às {{orphanage.closing_hours}}
+
             </div>
-            <div class="open-on-weekends">
+
+            {{#if orphanage.open_on_weekends}}
+            <div class="open-on-weekends open">
               <img src="/images/info.svg" alt="informação">
               Atendemos aos finais de semana
             </div>
+            {{else}}
+            <div class="open-on-weekends closed">
+              <img src="/images/info-red.svg" alt="informação">
+              Não atendemos aos finais de semana
+            </div>
+            {{/if}}
           </div>
-          <a href=" https://api.whatsapp.com/send?phone=5555991442242" target="_blank">
-            <button class="primary-button" type="button">
-              <img src="/images/whatsapp.svg" alt="Whatsapp ícone">
-              Entrar em contato
-            </button>
 
+          <a href=" https://api.whatsapp.com/send?phone=${{orphanage.whatsapp}}&text=Olá, gostaria de marcar uma visita no {{orphanage.name}}" target="_blank" class="primary-button" type="button">
+            <img src="/images/whatsapp.svg" alt="Whatsapp ícone">
+            Entrar em contato
           </a>
 
         </div>

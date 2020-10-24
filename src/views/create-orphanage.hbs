@@ -41,7 +41,7 @@
 
     <main class="animate-appear with-sidebar">
 
-      <form action="">
+      <form action="save-orphanage" method="POST" onsubmit="validate(event)">
         <fieldset>
           <legend>Informações sobre o local</legend>
           <div class="map-container">
@@ -85,7 +85,7 @@
             <div class="images-upload" id="images">
 
               <div class="new-upload">
-                <input name="images" placeholder="Cole o link da foto aqui" required type="text">
+                <input name="images" placeholder="Cole o link da foto aqui" required type="url">
                 <span onclick="deleteField(event)">
                   <img src="/images/remove-file.svg" alt="Remover foto">
                 </span>
@@ -111,7 +111,7 @@
             <label for="opening_hours">Horário de visitas</label>
             <input type="text" id="opening_hours" name="opening_hours" required placeholder="Início">
             <br><br>
-            <input type="text" id="opening_hours" name="opening_hours" required placeholder="Final">
+            <input type="text" id="opening_hours" name="closing_hours" required placeholder="Final">
           </div>
 
           <div class="input-block">
